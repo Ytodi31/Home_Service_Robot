@@ -5,17 +5,17 @@ void home_service::odomCallback(const nav_msgs::Odometry::ConstPtr& msg) {
   x = msg->pose.pose.position.x;
   y = msg->pose.pose.position.y;
 
-  if((x<=-5.1 || x>=-5.3) && (y<=6.3 && y>=6.1)) {
-    ROS_INFO("Hooray, the robot has picked up the object");
+  if ((x<=-5.3 && x>=-5.7) && (y<=6.2 && y>=5.8)) {
     marker.action = visualization_msgs::Marker::DELETE;
     marker_pub.publish(marker);
+    ROS_INFO_ONCE("Hooray, the robot has picked up the object");
   }
 
-  if((x<=7.8|| x>=7.6) && (y<=-2.9 && y>=-3.1)) {
+  if((x<=7.6 && x>=7.4) && (y<=-2.9 &&  y>=-3.1)) {
     marker.action = visualization_msgs::Marker::ADD;
 
   // Set the pose of the marker.  This is a full 6DOF pose relative to the frame/time specified in the header
-    marker.pose.position.x = 7.7;
+    marker.pose.position.x = 7.5;
     marker.pose.position.y = -3;
     marker.pose.position.z = 0;
     marker.pose.orientation.w = 1.0;
@@ -66,8 +66,8 @@ int main(int argc, char** argv) {
     robot.marker.action = visualization_msgs::Marker::ADD;
 
     // Set the pose of the marker.  This is a full 6DOF pose relative to the frame/time specified in the header
-    robot.marker.pose.position.x = -5.2;
-    robot.marker.pose.position.y = 6.2;
+    robot.marker.pose.position.x = -5.5;
+    robot.marker.pose.position.y = 6.0;
     robot.marker.pose.position.z = 0;
     robot.marker.pose.orientation.w = 1.0;
 

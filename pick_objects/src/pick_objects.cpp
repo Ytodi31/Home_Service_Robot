@@ -24,10 +24,9 @@ int main(int argc, char** argv){
 
  // Define a position and orientation for the robot to reach
 
-  goal.target_pose.pose.position.x = -5.25;
-  goal.target_pose.pose.position.y = 6.2;
-// goal.target_pose.pose.position.x = 1;
- goal.target_pose.pose.orientation.w = 1.0;
+  goal.target_pose.pose.position.x = -5.5;
+  goal.target_pose.pose.position.y = 6.0;
+  goal.target_pose.pose.orientation.w = 1.0;
 
  ROS_INFO("Sending robot to pickup location");
  ac.sendGoal(goal);
@@ -41,20 +40,20 @@ int main(int argc, char** argv){
 
   ros::Duration(5).sleep();
   // Define a position and orientation for the robot to reach
-  goal.target_pose.pose.position.x = 7.7;
-   goal.target_pose.pose.position.y = -3.0;
+  goal.target_pose.pose.position.x = 7.5;
+  goal.target_pose.pose.position.y = -3.0;
   goal.target_pose.pose.orientation.w = 1.0;
 
 
-   ROS_INFO("Sending goal");
+   ROS_INFO("Sending robot to drop-off location");
    ac.sendGoal(goal);
 
    ac.waitForResult();
 
    if(ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED)
-     ROS_INFO("Hooray, the robot reached the pickup location");
+     ROS_INFO("Hooray, the robot reached the drop location");
    else
-     ROS_INFO("The robot has failed to reach the pickup location");
+     ROS_INFO("The robot has failed to reach the drop location");
   ros::Duration(1).sleep();
   return 0;
 }
