@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 3.0.2)
 project(add_markers)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-# add_compile_options(-std=c++11)
+set(CMAKE_CXX_FLAGS "-std=c++11 ${CMAKE_CXX_FLAGS}")
+add_compile_options(-std=c++11)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -205,3 +206,6 @@ include_directories(
 # catkin_add_nosetests(test)
 add_executable(add_markers src/add_markers.cpp)
 target_link_libraries(add_markers ${catkin_LIBRARIES})
+
+add_executable(home_service include/home_service.hpp src/home_service.cpp )
+target_link_libraries(home_service ${catkin_LIBRARIES})
