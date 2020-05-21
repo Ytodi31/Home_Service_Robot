@@ -67,5 +67,5 @@ The image below represents the working project :
 <p align="center">
 <img src="output/output_picknplace.png" width="960" height="270" />
 </p>
-The pick and place operation of the service robot can be seen in this [link](https://youtu.be/iAVt4j5E6f8).
+The pick and place operation of the service robot can be seen in this link-(https://youtu.be/iAVt4j5E6f8).
 A copy of the video can also be found in the output folder of the repository.
