@@ -24,8 +24,10 @@ int main(int argc, char** argv){
 
  // Define a position and orientation for the robot to reach
 
-  goal.target_pose.pose.position.x = -5.5;
-  goal.target_pose.pose.position.y = 6.0;
+   goal.target_pose.pose.position.x = -6.2;
+   goal.target_pose.pose.position.y = 5.6;
+  // goal.target_pose.pose.position.x = -6.3;
+  // goal.target_pose.pose.position.y = 5.2;
   goal.target_pose.pose.orientation.w = 1.0;
 
  ROS_INFO("Sending robot to pickup location");
@@ -40,8 +42,10 @@ int main(int argc, char** argv){
 
   ros::Duration(5).sleep();
   // Define a position and orientation for the robot to reach
-  goal.target_pose.pose.position.x = 7.5;
-  goal.target_pose.pose.position.y = -3.0;
+  goal.target_pose.pose.position.x = 7;
+  goal.target_pose.pose.position.y = -4.1;
+  // goal.target_pose.pose.position.x = 8.8;
+  // goal.target_pose.pose.position.y = -3.8;
   goal.target_pose.pose.orientation.w = 1.0;
 
 

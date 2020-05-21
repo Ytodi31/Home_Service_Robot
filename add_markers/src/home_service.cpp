@@ -5,18 +5,36 @@ void home_service::odomCallback(const nav_msgs::Odometry::ConstPtr& msg) {
   x = msg->pose.pose.position.x;
   y = msg->pose.pose.position.y;
 
-  if ((x<=-5.3 && x>=-5.7) && (y<=6.2 && y>=5.8)) {
+  // if ((x<=-6.1 && x>=-6.5) && (y<=5.4 && y>=5)) {
+  //   marker.action = visualization_msgs::Marker::DELETE;
+  //   marker_pub.publish(marker);
+  //   ROS_INFO_ONCE("Hooray, the robot has picked up the object");
+  // }
+  if ((x<=-5.6 && x>=-5.8) && (y<=5.2 && y>=5.0)) {
     marker.action = visualization_msgs::Marker::DELETE;
+    ros::Duration(1.5).sleep();
     marker_pub.publish(marker);
     ROS_INFO_ONCE("Hooray, the robot has picked up the object");
   }
 
-  if((x<=7.6 && x>=7.4) && (y<=-2.9 &&  y>=-3.1)) {
+//   if((x<=8.6 && x>=8.9) && (y<=-3.6 &&  y>=-4.0)) {
+//     marker.action = visualization_msgs::Marker::ADD;
+//
+//   // Set the pose of the marker.  This is a full 6DOF pose relative to the frame/time specified in the header
+//     marker.pose.position.x = 8.8;
+//     marker.pose.position.y = -3.8;
+//     marker.pose.position.z = 0;
+//     marker.pose.orientation.w = 1.0;
+//     marker_pub.publish(marker);
+//     ROS_INFO_ONCE("Hooray, the robot has dropped off the object");
+//   }
+// }
+if((x<=8.5 && x>=7.5) && (y<=-3.8 &&  y>=-4.2)) {
     marker.action = visualization_msgs::Marker::ADD;
 
   // Set the pose of the marker.  This is a full 6DOF pose relative to the frame/time specified in the header
-    marker.pose.position.x = 7.5;
-    marker.pose.position.y = -3;
+    marker.pose.position.x = 7;
+    marker.pose.position.y = -4.1;
     marker.pose.position.z = 0;
     marker.pose.orientation.w = 1.0;
     marker_pub.publish(marker);
@@ -66,8 +84,10 @@ int main(int argc, char** argv) {
     robot.marker.action = visualization_msgs::Marker::ADD;
 
     // Set the pose of the marker.  This is a full 6DOF pose relative to the frame/time specified in the header
-    robot.marker.pose.position.x = -5.5;
-    robot.marker.pose.position.y = 6.0;
+    robot.marker.pose.position.x = -6.2;
+    robot.marker.pose.position.y = 5.6;
+    // robot.marker.pose.position.x = -6.3;
+    // robot.marker.pose.position.y = 5.2;
     robot.marker.pose.position.z = 0;
     robot.marker.pose.orientation.w = 1.0;
 
