@@ -51,6 +51,11 @@ To test the visualization of markers at pick and drop location, run the followin
 `./add_markers.sh ` \
  This will launch the TurtleBot in the world along with RVIZ, AMCL and add_markers node.
 
+ ### Home Service
+ To run the main project code, run the following from the scripts folder:\
+ `./home_service.sh` \
+  This will launch the TurtleBot in the world along with RVIZ, AMCL, pick objects node and home service node.
+
 ## Results and  Output
 
 The following map was created by using Gmapping on the robot with tele-operation :
