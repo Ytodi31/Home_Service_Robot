@@ -1,4 +1,5 @@
-na# Home Service robot
+# Home Service robot
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Overview
 The project uses a custom world map along with TurtleBot2 to simulate a service robot typically in a home doing pick and drop of objects. In the simulation, the objects are shown with the help of markers and can be visualized in Rviz.
